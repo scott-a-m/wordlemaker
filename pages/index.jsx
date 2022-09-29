@@ -174,7 +174,7 @@ export default function Home({ data }) {
                   <p className="created">Wordle Created 😀</p>
                   <p>Save and share your Wordle link below: </p>
                   <Link href={`/play/?id=${link}`}>
-                    <a className="link">{link}</a>
+                    <a className="link">{`https://wordlemaker.netlify.app/play/?id=${link}`}</a>
                   </Link>
                 </div>
               )}
