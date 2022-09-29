@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWordle } from "../hooks/useWordle";
 import Grid from "./Grid";
@@ -19,11 +20,11 @@ const Wordle = ({ solution }) => {
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
     if (isCorrect) {
-      setTimeout(() => setShowModal(true), 2000);
+      setTimeout(() => setShowModal(false), 2000);
       window.removeEventListener("keyup", handleKeyup);
     }
     if (turn > 5) {
-      setTimeout(() => setShowModal(true), 2000);
+      setTimeout(() => setShowModal(false), 2000);
       window.removeEventListener("keyup", handleKeyup);
     }
     return () => window.removeEventListener("keyup", handleKeyup);
@@ -41,6 +42,18 @@ const Wordle = ({ solution }) => {
           setShowModal={setShowModal}
         />
       )}
+      <p>
+        Want to create your own Wordle?{" "}
+        <Link href="/">
+          <a className="link">Let's do it!</a>
+        </Link>
+      </p>
+      <p className="developer">
+        developed by{" "}
+        <a href="https://www.scottsdev.net/" className="link" target="_blank">
+          Scott Mitchell
+        </a>
+      </p>
     </div>
   );
 };

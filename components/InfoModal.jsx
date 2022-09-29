@@ -21,13 +21,23 @@ const InfoModal = ({ isModalOpen, setIsModalOpen }) => {
             <span className="bg-grey">grey</span>.
           </p>
           <p>
-            Green indicates that the letter is in the word and it is in the
-            correct position. Yellow indicates that it's in the word but the
-            position's incorrect. Grey indicates that the letter is not in the
-            word
+            <span className="bg-green">Green</span> indicates that the letter is
+            in the word and it is in the correct position.{" "}
+            <span className="bg-yellow">Yellow</span> indicates that it's in the
+            word but the position's incorrect.{" "}
+            <span className="bg-grey">Grey</span>. indicates that the letter is
+            not in the word.
           </p>
         </div>
         <img src="/assets/rules.png" alt="Wordle Rules" className="rules-img" />
+        <p>The game Wordle was created by Josh Wardle.</p>
+        <p>
+          <strong>Wordle Maker</strong> was developed by{" "}
+          <a href="https://www.scottsdev.net/" className="link" target="_blank">
+            Scott Mitchell
+          </a>{" "}
+          for people to make and share their own Wordles for others to play.
+        </p>
       </div>
     </div>
   );

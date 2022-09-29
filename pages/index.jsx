@@ -179,6 +179,16 @@ export default function Home({ data }) {
                 </div>
               )}
             </div>
+            <p className="developer">
+              developed by{" "}
+              <a
+                href="https://www.scottsdev.net/"
+                className="link"
+                target="_blank"
+              >
+                Scott Mitchell
+              </a>
+            </p>
           </div>
         </div>
       </main>
