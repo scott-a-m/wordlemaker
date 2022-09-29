@@ -155,7 +155,7 @@ export default function Home({ data }) {
             <form onSubmit={createWordle}>
               <input
                 type="text"
-                onChange={(e) => setWord(e.target.value)}
+                onChange={(e) => setWord(e.target.value.toLowerCase())}
                 value={word}
                 placeholder="Enter a five-letter word"
                 required={true}
