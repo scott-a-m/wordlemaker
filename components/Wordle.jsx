@@ -20,11 +20,11 @@ const Wordle = ({ solution }) => {
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
     if (isCorrect) {
-      setTimeout(() => setShowModal(false), 2000);
+      setTimeout(() => setShowModal(true), 2000);
       window.removeEventListener("keyup", handleKeyup);
     }
     if (turn > 5) {
-      setTimeout(() => setShowModal(false), 2000);
+      setTimeout(() => setShowModal(true), 2000);
       window.removeEventListener("keyup", handleKeyup);
     }
     return () => window.removeEventListener("keyup", handleKeyup);
