@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { FaWindowClose } from "react-icons/fa";
 
-const Modal = ({ isCorrect, turn, solution, setShowModal }) => {
+const Modal = ({ isCorrect, turn, solution }) => {
   const router = useRouter();
   const forceReload = () => {
     router.reload();

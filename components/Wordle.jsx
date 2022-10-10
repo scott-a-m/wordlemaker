@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useWordle } from "../hooks/useWordle";
 import Grid from "./Grid";
 import Keypad from "./Keypad";
+import Modal from "./Modal";
 import { useSiteContext } from "./SiteContext";
 
 const Wordle = ({ solution }) => {
@@ -43,12 +44,7 @@ const Wordle = ({ solution }) => {
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <Keypad usedKeys={usedKeys} handleClick={handleClick} />
       {showModal && (
-        <Modal
-          isCorrect={isCorrect}
-          turn={turn}
-          solution={solution}
-          setShowModal={setShowModal}
-        />
+        <Modal isCorrect={isCorrect} turn={turn} solution={solution} />
       )}
       <p>
         Want to create your own Wordle?{" "}

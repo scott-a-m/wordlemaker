@@ -4,7 +4,6 @@ const SiteContext = React.createContext();
 
 const SiteProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(1);
 
   return (
     <SiteContext.Provider

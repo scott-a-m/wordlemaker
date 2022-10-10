@@ -177,10 +177,12 @@ export default function Home({ data }) {
                 <div className="success-info">
                   <p className="created">Wordle Created 😀</p>
                   <p>Copy and share your Wordle link below: </p>
-                  <button onClick={copyLink} className="learn-more-btn">
-                    Copy Link
-                  </button>
-                  <p className="alert">{alert ? "✅" : null}</p>
+                  <div className="link-div">
+                    <button onClick={copyLink} className="learn-more-btn">
+                      Copy Link
+                    </button>
+                    <p>{alert ? "✅" : null}</p>
+                  </div>
                 </div>
               )}
             </div>

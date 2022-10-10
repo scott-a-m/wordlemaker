@@ -193,8 +193,11 @@ body::before {
   color: white;
 }
 
-.alert {
-  display: inline-block
+.link-div {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
 }
 
 input {
