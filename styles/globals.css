@@ -92,15 +92,22 @@ body::before {
   font-size: 1.5rem;
 }
 
-.learn-more {
-  color: #f56f6f;
+.play-text {
+  font-size: 1.5rem;
+  margin-bottom: -0.5rem;
+  margin-top: -0.5rem;
 }
+
+.learn-more {
+  font-size: 1rem;
+}
+
 
 .learn-more-btn {
   background-color: transparent;
   outline: none;
   border: none;
-  font-size: 1.17rem;
+  font-size: 1rem;
   color: #f56f6f;
   cursor: pointer;
   transition: all 0.3s;
@@ -110,6 +117,8 @@ body::before {
 .learn-more-btn:hover {
   background-color: #f56f6f;
   color: white;
+  text-decoration: none;
+
 }
 
 .link {
@@ -162,14 +171,14 @@ body::before {
   display: block;
   padding: 1rem;
   border-radius: 0.5rem;
-  width: 100px;
+  width: 120px;
   outline: none;
   border: none;
   margin-top: 1rem;
   cursor: pointer;
   background-color: #f56f6f;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: all 0.3s;
 }
 
@@ -182,6 +191,10 @@ body::before {
   cursor: not-allowed;
   background-color: #faa7a7;
   color: white;
+}
+
+.alert {
+  display: inline-block
 }
 
 input {
@@ -473,7 +486,7 @@ input {
 .modal-content {
   background-color: rgb(33, 33, 33);
   color: white;
-  width: 900px;
+  width: 850px;
   height: 500px;
   overflow: scroll;
   position: relative;
@@ -517,6 +530,17 @@ input {
 
 
 @media (max-width: 550px) {
+
+  .play-text {
+    margin-top: -0.5rem;
+    font-size: 1.3rem;
+    margin-top: 0rem;
+
+  }
+
+  .learn-more, .learn-more-btn {
+    font-size: 0.9rem;
+  }
 
   .loader {
     font-size: 3rem;
@@ -645,7 +669,7 @@ input {
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
   margin-bottom: 2rem;
 }

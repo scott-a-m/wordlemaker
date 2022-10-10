@@ -3,14 +3,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import InfoModal from "../components/InfoModal";
 import Loader from "../components/Loader";
+import { useSiteContext } from "../components/SiteContext";
 
 export default function Home({ data }) {
+  const { setIsModalOpen, isModalOpen } = useSiteContext();
+
   const [word, setWord] = useState("");
   const [link, setLink] = useState("");
   const [error, setError] = useState({ display: false, msg: "" });
   const [loading, setLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState(null);
+  const [alert, setAlert] = useState(false);
 
   const checkWordLength = (query) => {
     if (query.length !== 5) {
@@ -62,6 +65,7 @@ export default function Home({ data }) {
       display: false,
       msg: "",
     });
+    setAlert(false);
     setLoading(true);
 
     // validators
@@ -93,6 +97,13 @@ export default function Home({ data }) {
       setMessage(null);
       setLoading(false);
     }
+  };
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(
+      `https://wordlemaker.scottsdev.net/play/?id=${link}`
+    );
+    setAlert(true);
   };
 
   useEffect(() => {
@@ -145,13 +156,6 @@ export default function Home({ data }) {
                 Learn More
               </button>
             </h3>
-            {isModalOpen && (
-              <InfoModal
-                setIsModalOpen={setIsModalOpen}
-                isModalOpen={isModalOpen}
-              />
-            )}
-
             <form onSubmit={createWordle}>
               <input
                 type="text"
@@ -172,10 +176,11 @@ export default function Home({ data }) {
               {link && (
                 <div className="success-info">
                   <p className="created">Wordle Created 😀</p>
-                  <p>Save and share your Wordle link below: </p>
-                  <Link href={`/play/?id=${link}`}>
-                    <a className="link">{`https://wordlemaker.netlify.app/play/?id=${link}`}</a>
-                  </Link>
+                  <p>Copy and share your Wordle link below: </p>
+                  <button onClick={copyLink} className="learn-more-btn">
+                    Copy Link
+                  </button>
+                  <p className="alert">{alert ? "✅" : null}</p>
                 </div>
               )}
             </div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useWordle } from "../hooks/useWordle";
 import Grid from "./Grid";
 import Keypad from "./Keypad";
-import Modal from "./Modal";
+import { useSiteContext } from "./SiteContext";
 
 const Wordle = ({ solution }) => {
   const {
@@ -16,6 +16,7 @@ const Wordle = ({ solution }) => {
     handleClick,
   } = useWordle(solution);
   const [showModal, setShowModal] = useState(false);
+  const { setIsModalOpen, isModalOpen } = useSiteContext();
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
@@ -32,6 +33,13 @@ const Wordle = ({ solution }) => {
 
   return (
     <div>
+      <h2 className="play-text">Play time!</h2>
+      <h3 className="learn-more">
+        New to the game?{" "}
+        <button className="learn-more-btn" onClick={() => setIsModalOpen(true)}>
+          Learn More
+        </button>
+      </h3>
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <Keypad usedKeys={usedKeys} handleClick={handleClick} />
       {showModal && (

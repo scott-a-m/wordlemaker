@@ -1,5 +1,7 @@
 import { FaWindowClose } from "react-icons/fa";
-const InfoModal = ({ isModalOpen, setIsModalOpen }) => {
+import { useSiteContext } from "./SiteContext";
+const InfoModal = () => {
+  const { isModalOpen, setIsModalOpen } = useSiteContext();
   return (
     <div
       className={isModalOpen ? "modal-container show-modal" : "modal-container"}
@@ -30,14 +32,33 @@ const InfoModal = ({ isModalOpen, setIsModalOpen }) => {
           </p>
         </div>
         <img src="/assets/rules.png" alt="Wordle Rules" className="rules-img" />
-        <p>The game Wordle was created by Josh Wardle.</p>
-        <p>
-          <strong>Wordle Maker</strong> was developed by{" "}
-          <a href="https://www.scottsdev.net/" className="link" target="_blank">
-            Scott Mitchell
-          </a>{" "}
-          for people to make and share their own Wordles for others to play.
-        </p>
+        <h1>About Wordle Maker</h1>
+        <div className="description">
+          <p>
+            Hi, I'm{" "}
+            <a
+              href="https://www.scottsdev.net/"
+              className="link"
+              target="_blank"
+            >
+              Scott Mitchell
+            </a>{" "}
+            and I developed <strong>Wordle Maker</strong> for people to make and
+            share their own wordles. Simply choose a five-letter word to get
+            your unique wordle game link and share it with your friends.
+          </p>
+          <p>
+            I learnt the programming logic for the Wordle puzzle from{" "}
+            <a
+              href="https://www.netninja.dev/"
+              className="link"
+              target="_blank"
+            >
+              Net Ninja
+            </a>{" "}
+          </p>
+          <p>The original game Wordle was created by Josh Wardle.</p>
+        </div>
       </div>
     </div>
   );

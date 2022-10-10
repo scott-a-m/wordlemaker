@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <h1 className="wordle-heading">Play Wordle</h1>
+        <h1 className="wordle-heading">Wordle Maker</h1>
         <div>
           {loading && (
             <div className="whole-page">
