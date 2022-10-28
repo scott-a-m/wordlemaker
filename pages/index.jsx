@@ -78,7 +78,7 @@ export default function Home({ data }) {
     // create Worlde
 
     try {
-      const res = await fetch("https://custom-wordle-backend.onrender.com/", {
+      const res = await fetch("https://wordlemaker.glitch.me/", {
         method: "POST",
         body: JSON.stringify({ word: word }),
         headers: {
