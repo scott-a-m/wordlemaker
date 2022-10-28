@@ -17,7 +17,9 @@ export default function Home() {
 
   const getWorlde = async () => {
     try {
-      const res = await fetch(`https://wordlemaker.glitch.me/${wordleId}`);
+      const res = await fetch(
+        `https://custom-wordle-backend.onrender.com/${wordleId}`
+      );
       const data = await res.json();
       setSolution(data.word);
       setMessage(null);
