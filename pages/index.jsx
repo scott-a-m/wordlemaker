@@ -72,13 +72,13 @@ export default function Home({ data }) {
 
     if (!checkWordLength(word)) return;
     if (!checkCharacters(word)) return;
-    const isItAWord = await isWord(word);
-    if (!isItAWord) return;
+    // const isItAWord = await isWord(word);
+    // if (!isItAWord) return;
 
     // create Worlde
 
     try {
-      const res = await fetch("https://custom-wordle-backend.onrender.com/", {
+      const res = await fetch("https://wordle-maker.ap-1.evennode.com/", {
         method: "POST",
         body: JSON.stringify({ word: word }),
         headers: {
