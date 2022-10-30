@@ -18,7 +18,7 @@ export default function Home() {
   const getWorlde = async () => {
     try {
       const res = await fetch(
-        `https://wordle-maker.ap-1.evennode.com/${wordleId}`
+        `https://wordlemakerserver.scottsdev.net/${wordleId}`
       );
       const data = await res.json();
       setSolution(data.word);

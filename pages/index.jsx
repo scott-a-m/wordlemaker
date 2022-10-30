@@ -78,7 +78,7 @@ export default function Home({ data }) {
     // create Worlde
 
     try {
-      const res = await fetch("https://wordle-maker.ap-1.evennode.com/", {
+      const res = await fetch("https://wordlemakerserver.scottsdev.net/", {
         method: "POST",
         body: JSON.stringify({ word: word }),
         headers: {
