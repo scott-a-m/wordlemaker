@@ -72,8 +72,8 @@ export default function Home({ data }) {
 
     if (!checkWordLength(word)) return;
     if (!checkCharacters(word)) return;
-    // const isItAWord = await isWord(word);
-    // if (!isItAWord) return;
+    const isItAWord = await isWord(word);
+    if (!isItAWord) return;
 
     // create Worlde
 
