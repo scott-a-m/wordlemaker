@@ -179,7 +179,7 @@ export default function Home({ data }) {
                   <p>Copy and share your Wordle link below: </p>
                   <div className="link-div">
                     <button onClick={copyLink} className="learn-more-btn">
-                      Copy Link
+                      {alert ? "Copied" : "Copy Link"}
                     </button>
                     <p>{alert ? "✅" : null}</p>
                   </div>
